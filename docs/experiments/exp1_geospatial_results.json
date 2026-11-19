@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-11-11T07:50:33.123Z",
+  "centerGeoJson": [
+    76.6258,
+    12.3282
+  ],
+  "productionRestaurants": {
+    "near5km": {
+      "stages": "FETCH -> GEO_NEAR_2DSPHERE -> FETCH -> IXSCAN -> FETCH -> IXSCAN",
+      "indexUsed": "location_2dsphere",
+      "executionTimeMillis": 1,
+      "totalKeysExamined": 14,
+      "totalDocsExamined": 16,
+      "nReturned": 8
+    },
+    "geoWithin5km": {
+      "stages": "FETCH -> IXSCAN",
+      "indexUsed": "isActive_1",
+      "executionTimeMillis": 1,
+      "totalKeysExamined": 8,
+      "totalDocsExamined": 8,
+      "nReturned": 8
+    }
+  },
+  "scaleBenchmarks2km": [
+    {
+      "docCount": 500,
+      "unindexedGeoWithin2km": {
+        "stages": "COLLSCAN",
+        "indexUsed": "NONE (COLLSCAN)",
+        "executionTimeMillis": 1,
+        "totalKeysExamined": 0,
+        "totalDocsExamined": 500,
+        "nReturned": 14
+      },
+      "indexedGeoWithin2km": {
+        "stages": "FETCH -> IXSCAN",
+        "indexUsed": "location_2dsphere",
+        "executionTimeMillis": 1,
+        "totalKeysExamined": 40,
+        "totalDocsExamined": 19,
+        "nReturned": 14
+      },
+      "indexedNear2km": {
+        "stages": "FETCH -> GEO_NEAR_2DSPHERE -> FETCH -> IXSCAN -> FETCH -> IXSCAN",
+        "indexUsed": "location_2dsphere",
+        "executionTimeMillis": 0,
+        "totalKeysExamined": 62,
+        "totalDocsExamined": 33,
+        "nReturned": 14
+      },
+      "docScanReductionPct": 96.2
+    },
+    {
+      "docCount": 1500,
+      "unindexedGeoWithin2km": {
+        "stages": "COLLSCAN",
+        "indexUsed": "NONE (COLLSCAN)",
+        "executionTimeMillis": 3,
+        "totalKeysExamined": 0,
+        "totalDocsExamined": 1500,
+        "nReturned": 41
+      },
+      "indexedGeoWithin2km": {
+        "stages": "FETCH -> IXSCAN",
+        "indexUsed": "location_2dsphere",
+        "executionTimeMillis": 1,
+        "totalKeysExamined": 78,
+        "totalDocsExamined": 53,
+        "nReturned": 41
+      },
+      "indexedNear2km": {
+        "stages": "FETCH -> GEO_NEAR_2DSPHERE -> FETCH -> IXSCAN -> FETCH -> IXSCAN",
+        "indexUsed": "location_2dsphere",
+        "executionTimeMillis": 1,
+        "totalKeysExamined": 95,
+        "totalDocsExamined": 94,
+        "nReturned": 41
+      },
+      "docScanReductionPct": 96.5
+    },
+    {
+      "docCount": 5000,
+      "unindexedGeoWithin2km": {
+        "stages": "COLLSCAN",
+        "indexUsed": "NONE (COLLSCAN)",
+        "executionTimeMillis": 9,
+        "totalKeysExamined": 0,
+        "totalDocsExamined": 5000,
+        "nReturned": 135
+      },
+      "indexedGeoWithin2km": {
+        "stages": "FETCH -> IXSCAN",
+        "indexUsed": "location_2dsphere",
+        "executionTimeMillis": 2,
+        "totalKeysExamined": 195,
+        "totalDocsExamined": 170,
+        "nReturned": 135
+      },
+      "indexedNear2km": {
+        "stages": "FETCH -> GEO_NEAR_2DSPHERE -> FETCH -> IXSCAN -> FETCH -> IXSCAN",
+        "indexUsed": "location_2dsphere",
+        "executionTimeMillis": 1,
+        "totalKeysExamined": 212,
+        "totalDocsExamined": 305,
+        "nReturned": 135
+      },
+      "docScanReductionPct": 96.6
+    }
+  ]
+}

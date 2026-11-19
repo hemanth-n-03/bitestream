@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-11-11T07:51:58.704Z",
+  "environment": "MongoDB Atlas M0/Replica Set + Express + Socket.IO WebSocket",
+  "changeStreams": {
+    "mutationsMeasured": 12,
+    "dbPollQueriesExecuted": 0,
+    "latencyMs": {
+      "sampleCount": 12,
+      "minMs": 176.1,
+      "avgMs": 211.4,
+      "p95Ms": 520,
+      "maxMs": 520
+    }
+  },
+  "pollingBaselines": {
+    "interval1000ms_15Clients": {
+      "clients": 15,
+      "intervalMs": 1000,
+      "windowMs": 4000,
+      "measuredDbQueries": 60,
+      "stateChangesDetected": 3,
+      "redundantEmptyReads": 57,
+      "redundantEmptyReadsPct": 95,
+      "httpQueryRttMs": {
+        "sampleCount": 60,
+        "minMs": 260.6,
+        "avgMs": 543.9,
+        "p95Ms": 838.5,
+        "maxMs": 1062.9
+      },
+      "estimatedAvgDetectLagMs": 1043.9
+    },
+    "interval2000ms_15Clients": {
+      "clients": 15,
+      "intervalMs": 2000,
+      "windowMs": 4000,
+      "measuredDbQueries": 30,
+      "stateChangesDetected": 2,
+      "redundantEmptyReads": 28,
+      "redundantEmptyReadsPct": 93.3,
+      "httpQueryRttMs": {
+        "sampleCount": 30,
+        "minMs": 266.1,
+        "avgMs": 321.3,
+        "p95Ms": 333.3,
+        "maxMs": 335.4
+      },
+      "estimatedAvgDetectLagMs": 1321.3
+    }
+  },
+  "comparison": {
+    "latencyReductionVs1sPollPct": 79.7,
+    "speedupFactorVs1sPoll": 4.94,
+    "zeroPollingDbReads": true
+  }
+}
